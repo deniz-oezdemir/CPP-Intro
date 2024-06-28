@@ -47,7 +47,30 @@ void	PhoneBook::list_contacts(){
 	this->select_contact();
 }
 
-
+void	PhoneBook::select_contact(){
+	std::string	input;
+	std::cout << "Enter the index of the contact to show: ";
+	while (1)
+	{
+		std::getline(std:cin, input);
+		if (input.length() == 1	&&
+			((this->full && input[0] > 48 && input[0] < 57) ||
+			(!this->full && input[0] > 48 && input[0] <= 48 + this->index))){
+				std::cout << "\n";
+				<< std::setw(10) << std::left << "first name"
+				<< std::setw(0) << this->contact[input[0] - 49].get_first_name();
+				<< std::setw(10) << std::left << "last name"
+				<< std::setw(0) << this->contact[input[0] - 49].get_last_name();
+				<< std::setw(10) << std::left << "nickname"
+				<< std::setw(0) << this->contact[input[0] - 49].get_nickname();
+				<< std::setw(10) << std::left << "phone number"
+				<< std::setw(0) << this->contact[input[0] - 49].get_phone_number();
+				<< "\n";
+				return;
+		}
+		std::cout << "Choice invalid. Please choose an existing index: ";
+	}
+}
 
 std::string	get_input(std::string detail){
 	std::string	input;
@@ -59,4 +82,10 @@ std::string	get_input(std::string detail){
 			std::cout << "\nField " << detail << " can not be empty. Please try again: ";
 	}
 	return (input);
+}
+
+std::string	truncate(std:string str){
+	if (str.length() > 10)
+		return (str.substr(0,9).append("."));
+	return (str);
 }
