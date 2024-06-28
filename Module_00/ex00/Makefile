@@ -1,13 +1,12 @@
 NAME		=	megaphone
 COMPILER	=	c++
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
-SANITIZER	=	-fsanitize=address
 
 SRCS		=	megaphone.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 $(NAME):		$(OBJS)
-				$(COMPILER) $(FLAGS) $(OBJS) $(SANITIZER) -o $(NAME)
+				$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
 
 all:			$(NAME)
 

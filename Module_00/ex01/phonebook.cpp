@@ -43,7 +43,7 @@ void	PhoneBook::list_contacts(){
 		<< std::setw(10) << truncate(this->contacts[i].get_nickname()) << '|'
 		i++;
 	}
-	std:cout << std::setw(40) << std::setfill('-') << "\n";
+	std::cout << std::setw(40) << std::setfill('-') << "\n";
 	this->select_contact();
 }
 
@@ -52,19 +52,19 @@ void	PhoneBook::select_contact(){
 	std::cout << "Enter the index of the contact to show: ";
 	while (1)
 	{
-		std::getline(std:cin, input);
+		std::getline(std::cin, input);
 		if (input.length() == 1	&&
 			((this->full && input[0] > 48 && input[0] < 57) ||
 			(!this->full && input[0] > 48 && input[0] <= 48 + this->index))){
-				std::cout << "\n";
+				std::cout << "\n"
 				<< std::setw(10) << std::left << "first name"
-				<< std::setw(0) << this->contact[input[0] - 49].get_first_name();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_first_name();
 				<< std::setw(10) << std::left << "last name"
-				<< std::setw(0) << this->contact[input[0] - 49].get_last_name();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_last_name();
 				<< std::setw(10) << std::left << "nickname"
-				<< std::setw(0) << this->contact[input[0] - 49].get_nickname();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_nickname();
 				<< std::setw(10) << std::left << "phone number"
-				<< std::setw(0) << this->contact[input[0] - 49].get_phone_number();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_phone_number();
 				<< "\n";
 				return;
 		}
@@ -84,7 +84,7 @@ std::string	get_input(std::string detail){
 	return (input);
 }
 
-std::string	truncate(std:string str){
+std::string	truncate(std::string str){
 	if (str.length() > 10)
 		return (str.substr(0,9).append("."));
 	return (str);
