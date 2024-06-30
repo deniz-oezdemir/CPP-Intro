@@ -1,6 +1,6 @@
 #include "phonebook.hpp"
 
-PhoneBook::Phonebook(){
+PhoneBook::PhoneBook(){
 	index = 0;
 	full = false;
 }
@@ -38,9 +38,9 @@ void	PhoneBook::list_contacts(){
 	while (i < this->index || (this->full && i < 8))
 	{
 		std::cout << std::setw(10) << std::right << i + 1 << '|'
-		<< std::setw(10) << truncate(this->contacts[i].get_first_name()) << '|'
-		<< std::setw(10) << truncate(this->contacts[i].get_last_name()) << '|'
-		<< std::setw(10) << truncate(this->contacts[i].get_nickname()) << '|'
+		<< std::setw(10) << truncate_str(this->contacts[i].get_first_name()) << '|'
+		<< std::setw(10) << truncate_str(this->contacts[i].get_last_name()) << '|'
+		<< std::setw(10) << truncate_str(this->contacts[i].get_nickname()) << '\n';
 		i++;
 	}
 	std::cout << std::setw(40) << std::setfill('-') << "\n";
@@ -58,13 +58,13 @@ void	PhoneBook::select_contact(){
 			(!this->full && input[0] > 48 && input[0] <= 48 + this->index))){
 				std::cout << "\n"
 				<< std::setw(10) << std::left << "first name"
-				<< std::setw(0) << this->contacts[input[0] - 49].get_first_name();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_first_name()
 				<< std::setw(10) << std::left << "last name"
-				<< std::setw(0) << this->contacts[input[0] - 49].get_last_name();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_last_name()
 				<< std::setw(10) << std::left << "nickname"
-				<< std::setw(0) << this->contacts[input[0] - 49].get_nickname();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_nickname()
 				<< std::setw(10) << std::left << "phone number"
-				<< std::setw(0) << this->contacts[input[0] - 49].get_phone_number();
+				<< std::setw(0) << this->contacts[input[0] - 49].get_phone_number()
 				<< "\n";
 				return;
 		}
@@ -84,7 +84,7 @@ std::string	get_input(std::string detail){
 	return (input);
 }
 
-std::string	truncate(std::string str){
+std::string	truncate_str(std::string str){
 	if (str.length() > 10)
 		return (str.substr(0,9).append("."));
 	return (str);

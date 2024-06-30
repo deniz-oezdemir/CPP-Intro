@@ -13,7 +13,7 @@ int	main(){
 		else if (cmd == "SEARCH")
 			book.list_contacts();
 		else if (cmd == "EXIT")
-			return;
+			return 0;
 		else
 			std::cout << "\nChoice invalid. Please enter ADD, SEARCH, or EXIT: ";
 	}

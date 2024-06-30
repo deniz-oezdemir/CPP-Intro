@@ -12,11 +12,14 @@ class PhoneBook{
 			int		index;
 			bool	full;
 	public:
-			Phonebook();
-			~Phonebook();
+			PhoneBook();
+			~PhoneBook();
 			void	add_contact();
 			void	list_contacts();
 			void	select_contact();
 };
+
+std::string	get_input(std::string detail);
+std::string	truncate_str(std::string str);
 
 #endif
