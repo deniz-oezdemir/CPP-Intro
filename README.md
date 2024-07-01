@@ -5,8 +5,8 @@ Each module covers the following topics.
 
 | Module | Contents |
 |     :---:     | :---         |
-| [01](Module_01) | Namespaces, class and instance, visibility, member attributes and member functions, initialization lists, accessors, this keyword, stdio streams, static, const, non-member attributes and non-member functions |
-| [02](Module_02) | tbd |
+| [00](Module_00) | Namespaces, class and instance, visibility, member attributes and member functions, initialization lists, accessors, this keyword, stdio streams, static, const, non-member attributes and non-member functions |
+| [01](Module_01) | tbd |
 
 
 ## Sources
