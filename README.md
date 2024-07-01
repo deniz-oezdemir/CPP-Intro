@@ -3,8 +3,10 @@
 ## Contents
 Each module covers the following topics.
 
-- Insert Table -
-
+| Module | Contents |
+|     :---:     | :---         |
+| [01](Module_01) | Namespaces, class and instance, visibility, member attributes and member functions, initialization lists, accessors, this keyword, stdio streams, static, const, non-member attributes and non-member functions |
+| [02](Module_02) | tbd |
 
 
 ## Sources
