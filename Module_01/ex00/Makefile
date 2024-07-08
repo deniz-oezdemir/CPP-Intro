@@ -1,14 +1,17 @@
 NAME		=	zombies
-COMPILER	=	c++
-FLAGS		=	-Wall -Werror -Wextra -std=c++98
+CXX			=	c++
+FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 SRCS		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
-SANITAZER=-fsanitize=address
+SANITAZER	=	-fsanitize=address
 
 $(NAME):		$(OBJS)
-				$(COMPILER) $(FLAGS) $(OBJS) $(SANITAZER) -o $(NAME)
+				$(CXX) $(FLAGS) $(OBJS) $(SANITAZER) -o $(NAME)
+
+%.o: %.cpp
+				$(CXX) $(FLAGS) -c $< -o $@
 
 all:			$(NAME)
 

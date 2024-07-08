@@ -30,7 +30,7 @@ int main(int ac, char **av) {
 		std::cerr << "Error: can not open infile" << std::endl;
 		return 1;
 	}
-	std::ofstream outfile(name_outfile);
+	std::ofstream outfile(name_outfile.c_str());
 	if (!outfile) {
 		std::cerr << "Error: can not open outfile" << std::endl;
 		return 1;
