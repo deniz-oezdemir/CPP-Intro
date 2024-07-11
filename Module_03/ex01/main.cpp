@@ -2,25 +2,25 @@
 
 int main()
 {
-	ScavTrap Liam("Liam");
+	ScavTrap Liam("ScavTrap Liam");
 	ScavTrap Anon;
 	std::cout << std::endl;
 
 	Anon.guardGate();
-	Liam.attack("Anonymous");
+	Liam.attack("ScavTrap Anonymous");
 	Anon.takeDamage(0);
-	Anon.attack("Liam");
+	Anon.attack("ScavTrap Liam");
 	Liam.takeDamage(0);
 	Anon.guardGate();
 
-	Liam.attack("Anonymous");
+	Liam.attack("ScavTrap Anonymous");
 	Anon.takeDamage(5);
 	Anon.beRepaired(3);
 	Anon.takeDamage(8);
 	Anon.takeDamage(1);
 
 	for (size_t i = 0; i < 49; i++)	{
-		Liam.attack("Anonymous");
+		Liam.attack("ScavTrap Anonymous");
 		Anon.takeDamage(20);
 	}
 

@@ -5,7 +5,7 @@
 # include <string>
 
 class ClapTrap{
-	private:
+	protected:
 		std::string name_;
 		unsigned int hitPoints_;
 		unsigned int energyPoints_;

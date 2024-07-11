@@ -2,23 +2,23 @@
 
 int main()
 {
-	ClapTrap Liam("Liam");
+	ClapTrap Liam("ClapTrap Liam");
 	ClapTrap Anon;
 	std::cout << std::endl;
 
-	Liam.attack("Anonymous");
+	Liam.attack("ClapTrap Anonymous");
 	Anon.takeDamage(0);
-	Anon.attack("Liam");
+	Anon.attack("ClapTrap Liam");
 	Liam.takeDamage(0);
 
-	Liam.attack("Anonymous");
+	Liam.attack("ClapTrap Anonymous");
 	Anon.takeDamage(5);
 	Anon.beRepaired(3);
 	Anon.takeDamage(8);
 	Anon.takeDamage(1);
 
 	for (size_t i = 0; i < 9; i++)	{
-		Liam.attack("Anonymous");
+		Liam.attack("ClapTrap Anonymous");
 	}
 
 	std::cout << std::endl;
