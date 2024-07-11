@@ -1,15 +1,17 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap Liam("Liam");
-	ClapTrap Anon;
+	ScavTrap Liam("Liam");
+	ScavTrap Anon;
 	std::cout << std::endl;
 
+	Anon.guardGate();
 	Liam.attack("Anonymous");
 	Anon.takeDamage(0);
 	Anon.attack("Liam");
 	Liam.takeDamage(0);
+	Anon.guardGate();
 
 	Liam.attack("Anonymous");
 	Anon.takeDamage(5);
@@ -17,9 +19,11 @@ int main()
 	Anon.takeDamage(8);
 	Anon.takeDamage(1);
 
-	for (size_t i = 0; i < 9; i++)	{
+	for (size_t i = 0; i < 49; i++)	{
 		Liam.attack("Anonymous");
 	}
+
+	Anon.takeDamage(100);
 
 	std::cout << std::endl;
 	return 0;
