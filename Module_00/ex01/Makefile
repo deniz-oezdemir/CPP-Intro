@@ -1,12 +1,17 @@
 NAME		=	phonebook
-COMPILER	=	c++
-FLAGS		=	-Wall -Werror -Wextra -std=c++98
+CXX			=	c++
+FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 SRCS		=	phonebook.cpp contact.cpp main.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
+SANITIZER	=	-fsanitize=address
+
 $(NAME):		$(OBJS)
-				$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
+				$(CXX) $(FLAGS) $(OBJS) $(SANITIZER) -o $(NAME)
+
+%.o: %.cpp
+				$(CXX) $(FLAGS) -c $< -o $@
 
 all:			$(NAME)
 
