@@ -21,9 +21,8 @@ int main()
 
 	for (size_t i = 0; i < 49; i++)	{
 		Liam.attack("Anonymous");
+		Anon.takeDamage(20);
 	}
-
-	Anon.takeDamage(100);
 
 	std::cout << std::endl;
 	return 0;
