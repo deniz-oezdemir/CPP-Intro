@@ -87,25 +87,32 @@ bool	Fixed::operator!=(Fixed const &fixed) const {
 	return (this->fixedPointNumber_  != fixed.fixedPointNumber_ );
 }
 
-
 Fixed	Fixed::operator+(Fixed const &fixed){
-	this->fixedPointNumber_ += fixed.getRawBits();
-	return (*this);
+	Fixed result;
+	result.setRawBits(this->fixedPointNumber_ + fixed.fixedPointNumber_);
+	return (result);
 }
 
 Fixed	Fixed::operator-(Fixed const &fixed){
-	this->fixedPointNumber_ -= fixed.getRawBits();
-	return (*this);
+	Fixed result;
+	result.setRawBits(this->fixedPointNumber_ - fixed.fixedPointNumber_);
+	return (result);
 }
 
 Fixed	Fixed::operator*(Fixed const &fixed){
-	this->fixedPointNumber_ = (this->toFloat() * fixed.toFloat()) * (1 << fractionalBits_);
-	return (*this);
+	Fixed result;
+	result.fixedPointNumber_ = (this->toFloat() * fixed.toFloat()) * (1 << fractionalBits_);
+	return (result);
 }
 
 Fixed	Fixed::operator/(Fixed const &fixed){
-	this->fixedPointNumber_ = (this->toFloat() / fixed.toFloat()) * (1 << fractionalBits_);
-	return (*this);
+	if (fixed.toFloat() == 0){
+		std::cerr << "Error: division by zero undefined, returning input" << std::endl;
+		return *this;
+	}
+	Fixed result;
+	result.fixedPointNumber_ = (this->toFloat() / fixed.toFloat()) * (1 << fractionalBits_);
+	return (result);
 }
 
 Fixed	Fixed::operator++(){
@@ -136,14 +143,14 @@ Fixed &Fixed::min(Fixed &a, Fixed &b){
 	return b;
 }
 
-const Fixed &min(const Fixed &a, const Fixed &b){
-	if (a < b)
+Fixed &Fixed::max(Fixed &a, Fixed &b){
+	if (a > b)
 		return a;
 	return b;
 }
 
-Fixed &Fixed::max(Fixed &a, Fixed &b){
-	if (a > b)
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b){
+	if (a < b)
 		return a;
 	return b;
 }

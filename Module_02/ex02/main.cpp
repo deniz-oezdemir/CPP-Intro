@@ -13,7 +13,50 @@ int main( void ) {
 
 	std::cout << b << std::endl;	// product of 5.05 and 2 with some precision loss
 
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << "max: " << Fixed::max( a, b ) << std::endl;
 
+	// further tests
+	std::cout << "min: " << Fixed::min( a, b ) << std::endl;
+	std::cout << std::endl;
+	Fixed c( -42.42f );
+	std::cout << "c = " << c << std::endl;
+	std::cout << "b = " << b << std::endl;
+	if (c > b)
+		std::cout << "c > b" << std::endl;
+	else
+		std::cout << "c < b" << std::endl;
+	if (c >= b)
+		std::cout << "c >= b" << std::endl;
+	if (c <= b)
+		std::cout << "c <= b" << std::endl;
+	if (c == b)
+		std::cout << "c == b" << std::endl;
+	if (c != b)
+		std::cout << "c != b" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << c << " + " << b << " = " << std::endl;
+	std::cout << c + b << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << c << " - " << b << " = " << std::endl;
+	std::cout << c - b << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << c << " * " << b << " = " << std::endl;
+	std::cout << c * b << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << c << " / " << b << " = " << std::endl;
+	std::cout << c / b << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << c << " / 0 = " << std::endl;
+	std::cout << (c / 0) << std::endl;
+	std::cout << std::endl;
 	return 0;
 }
