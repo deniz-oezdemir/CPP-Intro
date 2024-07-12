@@ -1,6 +1,5 @@
 #include "ClapTrap.hpp"
 
-// Constructors
 ClapTrap::ClapTrap(): name_("ClapTrap Anonymous"), hitPoints_(10), energyPoints_(10), attackDamage_(0){
 	std::cout << "Default Constructor of ClapTrap called: " << this->name_ << " created" << std::endl;
 }
@@ -14,12 +13,10 @@ ClapTrap::ClapTrap(const ClapTrap &copy){
 	*this = copy;
 }
 
-// Destructor
 ClapTrap::~ClapTrap(){
 	std::cout << "Destructor of ClapTrap called" << std::endl;
 }
 
-// Operator
 ClapTrap & ClapTrap::operator=(const ClapTrap &assign){
 	if (this != &assign){
 		std::cout << "Assignment operator on " << assign.name_ << " called" << std::endl;

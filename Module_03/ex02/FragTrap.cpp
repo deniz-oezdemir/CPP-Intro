@@ -38,15 +38,15 @@ FragTrap & FragTrap::operator=(FragTrap &assign){
 
 void FragTrap::attack(const std::string& target){
 	if (this->energyPoints_ == 0)
-		std::cout << this->name_ << " has no energy points and can not attack " << target << std::endl;
+		std::cout << this->name_ << ", " << this->name_ << ", has no energy points, sir " << this->name_ << " cannot attack, no sir" << std::endl;
 	else if (this->hitPoints_ == 0)
-		std::cout << this->name_ << " has no hit points and can not attack " << target << std::endl;
+		std::cout << this->name_ << ", " << this->name_ << ", has no hit points, sir " << this->name_ << " cannot attack, " << this->name_ << " is too weak, sir." << std::endl;
 	else {
-		std::cout << this->name_ << " attacks " << target << " causing " << this->attackDamage_ << " points damage" << std::endl;
+		std::cout << this->name_ << ", attacks " << target << ", sir, causing " << this->attackDamage_ << " damage, sir" << std::endl;
 		this->energyPoints_--;
 	}
 }
 
 void FragTrap::highFivesGuys(void){
-	std::cout << this->name_ << " requests high five" << std::endl;
+	std::cout << this->name_ << ": who wants a high five?!" << std::endl;
 }

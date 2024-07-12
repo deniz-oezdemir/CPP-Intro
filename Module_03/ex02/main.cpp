@@ -1,9 +1,19 @@
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 int main()
 {
+	ClapTrap Emma("ClapTrap Emma");
+	ScavTrap Ava("ScavTrap Ava");
+
 	FragTrap Liam("FragTrap Liam");
 	FragTrap Anon;
+	std::cout << std::endl;
+
+	Emma.attack("ScavTrap Ava");
+	Ava.takeDamage(0);
+	Ava.attack("ClapTrap Emma");
+	Emma.takeDamage(20);
 	std::cout << std::endl;
 
 	Liam.highFivesGuys();

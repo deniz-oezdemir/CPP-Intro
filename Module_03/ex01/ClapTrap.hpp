@@ -12,14 +12,11 @@ class ClapTrap{
 		unsigned int attackDamage_;
 
 	public:
-		// Constructors
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
-		// Destructor
 		~ClapTrap();
 
-		// Operator
 		ClapTrap & operator=(const ClapTrap &assign);
 
 		void attack(const std::string& target);

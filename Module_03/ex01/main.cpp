@@ -2,10 +2,13 @@
 
 int main()
 {
+	ClapTrap Noam("ClapTrap Noam");
 	ScavTrap Liam("ScavTrap Liam");
 	ScavTrap Anon;
 	std::cout << std::endl;
 
+	Noam.attack("ScavTrap Anonymous");
+	Anon.takeDamage(0);
 	Anon.guardGate();
 	Liam.attack("ScavTrap Anonymous");
 	Anon.takeDamage(0);

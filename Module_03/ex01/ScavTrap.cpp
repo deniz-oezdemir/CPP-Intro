@@ -1,6 +1,5 @@
 #include "ScavTrap.hpp"
 
-// Constructors
 ScavTrap::ScavTrap(): ClapTrap() {
 	name_ = "ScavTrap Anonymous";
 	hitPoints_ = 100;
@@ -26,7 +25,6 @@ ScavTrap::~ScavTrap(){
 	std::cout << "Destructor of ScavTrap called" << std::endl;
 }
 
-// Operator
 ScavTrap & ScavTrap::operator=(ScavTrap &assign){
 	if (this != &assign){
 		std::cout << "Assignment operator on " << assign.name_ << " called" << std::endl;
@@ -40,11 +38,11 @@ ScavTrap & ScavTrap::operator=(ScavTrap &assign){
 
 void ScavTrap::attack(const std::string& target){
 	if (this->energyPoints_ == 0)
-		std::cout << this->name_ << " has no energy points and can not attack " << target << std::endl;
+		std::cout << "I, " << this->name_ << ", have no energy points and cannot attack " << target << std::endl;
 	else if (this->hitPoints_ == 0)
-		std::cout << this->name_ << " has no hit points and can not attack " << target << std::endl;
+		std::cout << "I, " << this->name_ << ", have no hit points and cannot attack " << target << std::endl;
 	else {
-		std::cout << this->name_ << " attacks " << target << " causing " << this->attackDamage_ << " points damage" << std::endl;
+		std::cout << "I, " << this->name_ << ", attack " << target << " causing " << this->attackDamage_ << " damage" << std::endl;
 		this->energyPoints_--;
 	}
 }
