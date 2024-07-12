@@ -10,14 +10,11 @@ class ScavTrap : public ClapTrap
 		bool isGuarding_;
 
 	public:
-		// Constructors
 		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap &src);
-		// Destructor
 		~ScavTrap();
 
-		// Operator
 		ScavTrap & operator=(ScavTrap &assign);
 
 		void attack(const std::string& target);
