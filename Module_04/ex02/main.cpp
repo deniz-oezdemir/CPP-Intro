@@ -3,6 +3,10 @@
 #include "Dog.hpp"
 
 int main() {
+	//test unallowed instantiation
+	//AAnimal test;
+
+	//tests from ex01
 	//subject tests
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
