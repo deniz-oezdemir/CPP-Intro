@@ -61,10 +61,14 @@ void Character::equip(AMateria *m)
 		return;
 	}
 	for (int i = 0; i < 4; i++)	{
-		if (this->inventory[i] == NULL)
-		{
+		if (this->inventory[i] == NULL){
 			this->inventory[i] = m;
 			std::cout << "Character " << this->name_ << " equipped slot " << i << " with " << m->getType() << std::endl;
+			return;
+		}
+		if (i == 3){
+			std::cout << "Character " << this->name_ << "'s inventory is full, can not equip and therefore destroys " << m->getType() << std::endl;
+			delete m;
 			return;
 		}
 	}

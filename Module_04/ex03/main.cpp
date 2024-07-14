@@ -32,6 +32,14 @@ int main()
 	me->use(3, *bob); //nothing
 	me->use(4, *bob); //slot out of range
 
+	std::cout << std::endl;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp); //not possible as full inventory
+
 	// deep copy test
 	std::cout << std::endl;
 	Character original("original");
@@ -42,8 +50,8 @@ int main()
 	copy.use(0, *bob);
 	original.unequip(0);
 	delete(tmp);
-	original.use(0, *bob); //should not have anything at the slot anymore
-	copy.use(0, *bob); //should still have ice at the slot if deep copy
+	original.use(0, *bob); //does not have anything at the slot anymore
+	copy.use(0, *bob); //does still have ice at the slot if deep copy
 
 	std::cout << std::endl;
 	delete bob;

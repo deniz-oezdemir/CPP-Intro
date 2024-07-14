@@ -1,6 +1,6 @@
-# Module_04: Details
+# Module_04
 
-## Subtyping Polymorphism
+## Subtyping Polymorphism (ex00)
 
 Subtyping polymorphism allows a subclass to be treated as an instance of its parent class. The following behaviors apply:
 
@@ -10,7 +10,7 @@ Subtyping polymorphism allows a subclass to be treated as an instance of its par
 - **Overriding with `virtual` Functions**: To ensure that the child class's methods are called instead of the parent's when using a parent class type pointer, you can mark the parent class's method as `virtual`. If the child class provides its own implementation, this version will be called, showcasing polymorphic behavior.
 
 
-## Importance of `virtual` Destructors (ex01)
+## `virtual` Destructors (ex01)
 Compiling without a `virtual` Destructor in the Animal Class results in an error. The error messages are due to the C++ compiler flags `-Wall -Werror -Wextra`.
 
 The specific warning here is about deleting instances of a polymorphic class that has a non-virtual destructor. In C++, if a class is designed to be a base class of a polymorphism hierarchy (i.e., it has or is intended to have subclasses that may override its methods), it should have a virtual destructor. This ensures that when a derived class object is deleted through a pointer to the base class, the destructor of the derived class is called first, followed by the base class destructor, allowing for proper resource cleanup.
@@ -30,3 +30,17 @@ Here's what happens step by step without the `virtual` destructor in the base cl
 5. **Undefined Behavior and Resource Leaks**: The failure to call the derived class destructor can lead to undefined behavior, especially if the derived class is managing resources that need explicit cleanup. This can manifest as memory leaks, dangling pointers, or other erratic behavior.
 
 Using a `virtual` destructor in the base class ensures that deleting an object through a base class pointer will correctly call the destructor chain: first the derived class's destructor, then the base class's destructor, allowing for proper cleanup of resources.
+
+
+## Abstract Classes (ex02)
+Abstract classes serve as foundational templates for other classes. They are characterized by the following:
+- They contain at least one pure virtual method, which is declared with `virtual` and assigned `= 0`. This indicates that the method must be implemented by any derived class.
+- By convention, abstract classes are named with a prefix `A` to denote their abstract nature. This helps in quickly identifying abstract classes in a codebase.
+- Abstract classes are utilized to outline common behaviors that derived classes should implement, providing a clear structure for inheritance.
+
+## Interfaces (ex03)
+Interfaces act as contracts for class behavior, ensuring consistency across different implementations:
+- An interface, typically prefixed with `I`, defines a set of methods without implementing them. It mandates that any class inheriting the interface must implement these methods.
+- Interfaces facilitate a form of multiple inheritances by allowing a class to inherit behavior from multiple sources, ensuring that a class adheres to a particular protocol or set of behaviors.
+
+Both abstract classes and interfaces are instrumental in creating a well-structured, modular, and maintainable codebase. They encourage the design of components that are both extensible and interoperable.
