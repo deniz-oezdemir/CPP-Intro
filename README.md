@@ -8,7 +8,8 @@ Each module covers the following topics.
 | [00](Module_00) | Namespaces, class and instance, visibility, member attributes and member functions, initialization lists, accessors, this keyword, stdio streams, static, const, non-member attributes and non-member functions |
 | [01](Module_01) | Memory allocation, new and delete operators, references, pointers to members, filestreams, switch statements |
 | [02](Module_02) | Ad-hoc polymorphism, operator overloading, orthodox canonical class form |
-
+| [03](Module_03) | Inheritance |
+| [04](Module_04) | Subtype polymorphism, `virtual` Destructors, abstract classes, interfaces |
 
 ## Sources
 * Quick intro to OOP with C++:

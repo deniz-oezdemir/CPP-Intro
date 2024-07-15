@@ -1,6 +1,6 @@
 # Module_04
 
-## Subtyping Polymorphism (ex00)
+## Subtype Polymorphism (ex00)
 
 Subtyping polymorphism allows a subclass to be treated as an instance of its parent class. The following behaviors apply:
 
