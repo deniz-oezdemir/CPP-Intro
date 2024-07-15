@@ -17,7 +17,7 @@ The specific warning here is about deleting instances of a polymorphic class tha
 
 Without the `virtual` keyword, only the base class destructor will be executed. This can lead to resource leaks or other issues if the derived class allocates resources (like dynamic memory, file handles, etc. - here a `Brain` instance) that are released in its destructor.
 
-Here's what happens step by step without the `virtual` destructor in the base class:
+Here's what happens step by step **_without_** the `virtual` destructor in the base class:
 
 1. **Object Creation**: An object of a derived class is created dynamically using `new`. This object might allocate additional resources that need to be cleaned up when the object is destroyed.
 

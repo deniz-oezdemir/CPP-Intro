@@ -22,9 +22,9 @@ int main(){
 	const WrongAnimal* uber = new WrongCat();
 	WrongCat k;
 	std::cout << uber->getType() << " " << std::endl;
-	uber->makeSound(); //parent class's method is called as not virtual
+	uber->makeSound(); //parent class's method is called as not virtual: Wrong animal noise
 	std::cout << k.getType() << " " << std::endl;
-	k.makeSound(); //child class's method is called directly
+	k.makeSound(); //child class's method is called directly: Meow
 	delete uber;
 	return (0);
 }
