@@ -19,3 +19,5 @@ Exception handling in C++ is a mechanism to handle runtime errors. Key component
 - **`catch`**
 	- A block of code that handles the exception thrown by the `try` block.
 	- It specifies the type of exception it can handle.
+
+## Nested Classes (ex00) - tbd

@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Forms.hpp"
 
 // Constructors
 
@@ -72,7 +73,16 @@ void Bureaucrat::decrementGrade() {
 		grade_++;
 }
 
-// Exceptions
+void Bureaucrat::signForm(Form &form) {
+	try	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e) {
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << "." << std::endl;
+	}
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("Grade can not be higher than 1");
 }

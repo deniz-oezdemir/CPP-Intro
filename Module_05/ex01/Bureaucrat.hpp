@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+class Form;
 
 class Bureaucrat {
 	private:
@@ -23,6 +24,7 @@ class Bureaucrat {
 
 	void				incrementGrade();
 	void				decrementGrade();
+	void				signForm(Form &form);
 
 	// Custom exception classes inherit from standard std::exception class and handle error cases
 	class GradeTooHighException : public std::exception	{
