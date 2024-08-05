@@ -9,33 +9,33 @@ class Bureaucrat {
 		unsigned int		grade_;
 
 	public:
-	Bureaucrat();
-	Bureaucrat(std::string const name);
-	Bureaucrat(Bureaucrat &src);
-	Bureaucrat &operator=(Bureaucrat &assign);
+		Bureaucrat();
+		Bureaucrat(std::string const name);
+		Bureaucrat(Bureaucrat &src);
+		Bureaucrat &operator=(Bureaucrat &assign);
 
-	Bureaucrat(unsigned int grade);
-	Bureaucrat(std::string const name, unsigned int grade);
+		Bureaucrat(unsigned int grade);
+		Bureaucrat(std::string const name, unsigned int grade);
 
-	~Bureaucrat();
+		~Bureaucrat();
 
-	const std::string	getName() const;
-	unsigned int		getGrade() const;
+		const std::string	getName() const;
+		unsigned int		getGrade() const;
 
-	void				incrementGrade();
-	void				decrementGrade();
-	void				signForm(AForm &form);
-	void				executeForm(AForm const &form); //ex02
+		void				incrementGrade();
+		void				decrementGrade();
+		void				signForm(AForm &form);
+		void				executeForm(AForm const &form); //ex02
 
-	// Custom exception classes inherit from standard std::exception class and handle error cases
-	class GradeTooHighException : public std::exception	{
-		public:
-			virtual const char *what() const throw();
-	};
-	class GradeTooLowException : public std::exception {
-		public:
-			virtual const char *what() const throw();
-	};
+		// Custom exception classes inherit from standard std::exception class and handle error cases
+		class GradeTooHighException : public std::exception	{
+			public:
+				virtual const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 std::ostream &operator<<(std::ostream &str, Bureaucrat &bureaucrat);
