@@ -10,7 +10,7 @@ Each module covers the following topics.
 | [02](Module_02) | Ad-hoc polymorphism, operator overloading, orthodox canonical class form |
 | [03](Module_03) | Inheritance |
 | [04](Module_04) | Subtype polymorphism, `virtual` destructors, abstract classes, interfaces |
-| [05](Module_05) | Repetition, exceptions, Nested classes |
+| [05](Module_05) | Repetition, exceptions, nested classes |
 
 ## Sources
 * Tutorial covering everything from basics to advanced topics: [learncpp.com](https://www.learncpp.com/)

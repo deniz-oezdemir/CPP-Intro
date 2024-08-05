@@ -11,6 +11,7 @@ Subtyping polymorphism allows a subclass to be treated as an instance of its par
 
 
 ## `virtual` Destructors (ex01)
+
 Compiling without a `virtual` Destructor in the Animal Class results in an error. The error messages are due to the C++ compiler flags `-Wall -Werror -Wextra`.
 
 The specific warning here is about deleting instances of a polymorphic class that has a non-virtual destructor. In C++, if a class is designed to be a base class of a polymorphism hierarchy (i.e., it has or is intended to have subclasses that may override its methods), it should have a virtual destructor. This ensures that when a derived class object is deleted through a pointer to the base class, the destructor of the derived class is called first, followed by the base class destructor, allowing for proper resource cleanup.
@@ -33,12 +34,15 @@ Using a `virtual` destructor in the base class ensures that deleting an object t
 
 
 ## Abstract Classes (ex02)
+
 Abstract classes serve as foundational templates for other classes. They are characterized by the following:
 - They contain at least one pure virtual method, which is declared with `virtual` and assigned `= 0`. This indicates that the method must be implemented by any derived class.
 - By convention, abstract classes are named with a prefix `A` to denote their abstract nature. This helps in quickly identifying abstract classes in a codebase.
 - Abstract classes are utilized to outline common behaviors that derived classes should implement, providing a clear structure for inheritance.
 
+
 ## Interfaces (ex03)
+
 Interfaces act as contracts for class behavior, ensuring consistency across different implementations:
 - An interface, typically prefixed with `I`, defines a set of methods without implementing them. It mandates that any class inheriting the interface must implement these methods.
 - Interfaces facilitate a form of multiple inheritances by allowing a class to inherit behavior from multiple sources, ensuring that a class adheres to a particular protocol or set of behaviors.
