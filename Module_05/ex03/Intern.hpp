@@ -9,10 +9,12 @@ class Intern {
 
 		~Intern();
 
-		AForm* makeForm(std::string name, std::string target);
+		AForm *makeForm(std::string name, std::string target);
+		AForm *makeSCF(std::string &target);
+		AForm *makeRRF(std::string &target);
+		AForm *makePPF(std::string &target);
 
-		class unknownForm : public std::exception
-		{
+		class unknownForm : public std::exception {
 			public:
 				virtual const char	*what() const throw();
 		};

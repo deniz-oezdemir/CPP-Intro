@@ -26,8 +26,8 @@ class AForm {
 		virtual std::string	getTarget() const = 0; // ex02
 
 		void				beSigned(Bureaucrat &bureaucrat);
-		virtual void		execute(Bureaucrat const &executor) const; // ex02 // checks signature and grade - base class
-		virtual void		act(Bureaucrat const &executor) const = 0; // ex02 // executes the action - derived class
+		virtual void		execute(Bureaucrat const &executor) const; // ex02 // checks signature and grade - in this base class
+		virtual void		act(Bureaucrat const &executor) const = 0; // ex02 // executes the action - in the derived classes
 
 		class GradeTooHighException : public std::exception {
 			public:

@@ -3,10 +3,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-AForm *makeSCF(std::string target);
-AForm *makeRRF(std::string target);
-AForm *makePPF(std::string target);
-
 Intern::Intern() {
 	std::cout << "Intern's default constructor called" << std::endl;
 }
@@ -26,32 +22,31 @@ Intern::~Intern() {
 	std::cout << "Intern's destructor called" << std::endl;
 }
 
-AForm *Intern::makeForm(std::string formName, std::string target)
-{
-	AForm			*(*functions[3])(const std::string target) = {&makeSCF, &makeRRF, &makePPF};
-	std::string		names[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+AForm *Intern::makeForm(std::string formName, std::string target) {
+    AForm 		*(Intern::*functions[3])(std::string &) = {&Intern::makeSCF, &Intern::makeRRF, &Intern::makePPF};
+	std::string	names[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 
 	for (int i = 0; i < 3; i++) {
 		if (formName == names[i]) {
 			std::cout << "Intern creates " << formName << std::endl;
-			return (functions[i](target));
+			return (this->*functions[i])(target);
 		}
 	}
 	throw(Intern::unknownForm());
 }
 
 const char *Intern::unknownForm::what() const throw() {
-	return ("Form with given name does not exist");
+	return ("Form not found");
 }
 
-AForm *makeSCF(std::string target) {
+AForm *Intern::makeSCF(std::string &target) {
 	return (new ShrubberyCreationForm(target));
 }
 
-AForm *makeRRF(std::string target) {
+AForm *Intern::makeRRF(std::string &target) {
 	return (new RobotomyRequestForm(target));
 }
 
-AForm *makePPF(std::string target) {
+AForm *Intern::makePPF(std::string &target) {
 	return (new PresidentialPardonForm(target));
 }
