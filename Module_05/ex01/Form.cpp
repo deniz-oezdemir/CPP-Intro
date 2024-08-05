@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Forms.hpp"
+#include "Form.hpp"
 
 Form::Form(): name_("anonymous"), isSigned_(false), requiredGradeSign_(1), requiredGradeExec_(1) {
 	std::cout << "Form default constructor called" << std::endl;
