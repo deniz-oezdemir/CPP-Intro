@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Forms.hpp"
+#include "AForm.hpp"
 
 // Constructors
 
@@ -51,11 +51,11 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "Bureaucrat " << this->name_ << "'s destructor called" << std::endl;
 }
 
-const std::string Bureaucrat::getName() {
+const std::string Bureaucrat::getName() const {
 	return (this->name_);
 }
 
-unsigned int Bureaucrat::getGrade() {
+unsigned int Bureaucrat::getGrade() const {
 	return (this->grade_);
 }
 
@@ -73,13 +73,28 @@ void Bureaucrat::decrementGrade() {
 		grade_++;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 	try	{
 		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e) {
 		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << "." << std::endl;
+	}
+}
+
+// ex02
+void Bureaucrat::executeForm(AForm const &form) {
+	bool	isException = false;
+	try	{
+		form.execute(*this);
+	}
+	catch(std::exception &e) {
+		std::cout << this->getName() << " could not execute " << form.getName() << " because " << e.what() << std::endl;
+		isException = true;
+	}
+	if (!isException) {
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 }
 
