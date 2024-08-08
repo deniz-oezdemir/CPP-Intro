@@ -30,6 +30,19 @@ Child *child = &parent; // compile-time error: cannot implicitly downcast
 ```
 - Classes create new types that fall into a hierarchy thanks to inheritance.
 
+## Static Cast
+- C++-style explicit cast: `static_cast<type>(foo)`
+- Can be used with user-defined types too.
+- It can detect if the cast doesn't belong to the same inheritance line and throws an error.
+
+## Dynamic Casts
+- Cast happens at runtime and not during compilation.
+- Used for virtual classes.
+- Returns null if the cast is not possible.
+- Cast using pointer: `dynamic_cast<Child *>(foo)`.
+- Cast using reference `dynamic_cast<Child &>(foo)`.
+- When casting by reference, it can't return a null reference, so there's a specific type of exception: `std::bad_cast &bc`.
+
 ## Type Reinterpretation
 - `void *` is the most generic type.
 - Implicit promotion is fine:
@@ -49,16 +62,3 @@ int *ip = p; // dangerous
 void *p;
 int *ip = (int *)p;
 ```
-
-## Static Cast
-- C++-style explicit cast: `static_cast<type>(foo)`
-- Can be used with user-defined types too.
-- It can detect if the cast doesn't belong to the same inheritance line and throws an error.
-
-## Dynamic Casts
-- Cast happens at runtime and not during compilation.
-- Used for virtual classes.
-- Returns null if the cast is not possible.
-- Cast using pointer: `dynamic_cast<Child *>(foo)`.
-- Cast using reference `dynamic_cast<Child &>(foo)`.
-- When casting by reference, it can't return a null reference, so there's a specific type of exception: `std::bad_cast &bc`.
