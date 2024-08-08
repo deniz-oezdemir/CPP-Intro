@@ -18,14 +18,14 @@ int main() {
 
 	// Serialize dataPointer
 	dataPointer = &data;
-	std::cout << "Pointer address to Data: " << dataPointer << std::endl;
+	std::cout << "Pointer address to Data:\t\t " << dataPointer << std::endl;
 	pointerNum = Serializer::serialize(dataPointer);
-	std::cout << "Address converted to uintptr_t: " << pointerNum << std::endl;
+	std::cout << "Address converted to uintptr_t:\t\t " << pointerNum << std::endl;
 	std::cout << std::endl;
 
 	// Deserialize pointerNum
 	dataPointer2 = Serializer::deserialize(pointerNum);
-	std::cout << "Converted back to pointer: " << dataPointer2 << std::endl;
+	std::cout << "Converted back to pointer address:\t " << dataPointer2 << std::endl;
 	std::cout << std::endl;
 
 	// Print deserialized data
