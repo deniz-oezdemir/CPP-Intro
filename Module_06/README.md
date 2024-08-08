@@ -43,6 +43,17 @@ Child *child = &parent; // compile-time error: cannot implicitly downcast
 - Cast using reference `dynamic_cast<Child &>(foo)`.
 - When casting by reference, it can't return a null reference, so there's a specific type of exception: `std::bad_cast &bc`.
 
+## Reinterpret Cast
+- `reinterpret_cast` is a C++ type casting operator.
+- It allows for type reinterpretation without changing the underlying representation of the data.
+- Example:
+```
+int x = 42;
+float *fp = reinterpret_cast<float*>(&x);
+```
+- In this example, `reinterpret_cast` is used to reinterpret the memory of `x` as a `float` pointer, without changing the actual value of `x`.
+- It is important to note that `reinterpret_cast` should be used with caution, as it can lead to undefined behavior if misused.
+
 ## Type Reinterpretation
 - `void *` is the most generic type.
 - Implicit promotion is fine:

@@ -11,7 +11,7 @@ Each module covers the following topics.
 | [03](Module_03) | Inheritance |
 | [04](Module_04) | Subtype polymorphism, `virtual` destructors, abstract classes, interfaces |
 | [05](Module_05) | Repetition, exceptions, nested classes |
-| [06](Module_06) | Implicit and explicit casts, static cast, dynamic cast, upcast and downcast |
+| [06](Module_06) | Implicit and explicit casts, static cast, dynamic cast, upcast and downcast, reinterpret cast |
 
 ## Sources
 * Tutorial covering everything from basics to advanced topics: [learncpp.com](https://www.learncpp.com/)
