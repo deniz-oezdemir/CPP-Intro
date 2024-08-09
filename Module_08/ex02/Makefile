@@ -1,4 +1,4 @@
-NAME		=	ex01
+NAME		=	mutant
 CXX			=	c++
 FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
