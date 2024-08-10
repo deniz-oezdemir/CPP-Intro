@@ -14,6 +14,7 @@ Each module covers the following topics.
 | [06](Module_06) | Casts: implicit, explicit, static, dynamic, up- and downcast, reinterpret |
 | [07](Module_07) | Templates |
 | [08](Module_08) | Templated containers, iterators, algorithms |
+| [09](Module_09) | Containers and algorithms in STL |
 
 ## Sources
 * Tutorial covering everything from basics to advanced topics: [learncpp.com](https://www.learncpp.com/)
@@ -22,4 +23,5 @@ Each module covers the following topics.
 * Overview of iostream library: [cplusplus.com](https://cplusplus.com/reference/iolibrary/)
 * Polymorphism explanation: [GeeksforGeeks](https://www.geeksforgeeks.org/cpp-polymorphism/)
 * Components of the orthodox canonical class form: [Oregon State](https://web.engr.oregonstate.edu/~budd/Books/cforj/info/slides/Chapter5/tsld034.htm)
+* Quick intro to containers in STL: [GeeksforGeeks](https://www.geeksforgeeks.org/containers-cpp-stl/)
 
