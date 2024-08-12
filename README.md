@@ -24,4 +24,4 @@ Each module covers the following topics.
 * Polymorphism explanation: [GeeksforGeeks](https://www.geeksforgeeks.org/cpp-polymorphism/)
 * Components of the orthodox canonical class form: [Oregon State](https://web.engr.oregonstate.edu/~budd/Books/cforj/info/slides/Chapter5/tsld034.htm)
 * Quick intro to containers in STL: [GeeksforGeeks](https://www.geeksforgeeks.org/containers-cpp-stl/)
-
+* Comparison of deque and vector in STL: [GeeksforGeeks](https://www.geeksforgeeks.org/deque-vs-vector-in-c-stl/)
