@@ -10,12 +10,10 @@ RPN::RPN(const std::string& RPNExpression) {
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
-	return ;
 }
 
 RPN::RPN(const RPN &src) {
 	*this = src;
-	return ;
 }
 
 RPN &RPN::operator=(const RPN &src) {
@@ -52,9 +50,8 @@ void RPN::evaluateRPNExpression(const std::string& RPNExpression) {
 			} else if (current == '*') {
 				this->numberStack_.push(a * b);
 			} else if (current == '/') {
-				if (b == 0) {
+				if (b == 0)
 					throw RPN::InvalidRPNExpressionException();
-				}
 				this->numberStack_.push(a / b);
 			}
 		}
@@ -69,5 +66,5 @@ void RPN::evaluateRPNExpression(const std::string& RPNExpression) {
 }
 
 const char *RPN::InvalidRPNExpressionException::what() const throw() {
-	return "Error: Invalid RPN RPNExpression";
+	return "Error: Invalid RPN-Expression";
 }
