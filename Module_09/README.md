@@ -11,7 +11,7 @@ In C++, `std::map` is a standard library container that stores elements in key-v
 - **Unique Keys**: Each key in a `std::map` is unique.
 - **Logarithmic Complexity**: Insertion, deletion, and lookup operations are efficient, with O(log n) complexity.
 
-### Why `std::map` is perfect for the BitcoinExchange Exercise
+### Why `std::map` for the BitcoinExchange Exercise
 
 In the BitcoinExchange exercise, we need to store and retrieve exchange rates based on dates. The `std::map` is an ideal choice for this purpose due to the following reasons:
 
@@ -30,7 +30,7 @@ In C++, `std::stack` is a standard library container adapter that provides a sta
 - **Simple Interface**: Provides basic operations such as `push`, `pop`, `top`, `empty`, and `size`.
 - **Container Adapter**: Can be implemented using different underlying containers like `std::deque`, `std::vector`, or `std::list`.
 
-### Why `std::stack` is perfect for the RPN Exercise
+### Why `std::stack` for the RPN Exercise
 
 In the RPN (Reverse Polish Notation) exercise, we need to evaluate mathematical expressions written in postfix notation. The `std::stack` is an ideal choice for this purpose due to the following reasons:
 
@@ -62,7 +62,7 @@ In C++, `std::vector` and `std::deque` are standard library containers that prov
 - **Dynamic Size**: Automatically resizes as elements are added or removed.
 - **Non-Contiguous Memory**: Elements are not stored in contiguous memory locations, but still provide fast access.
 
-### Why `std::vector` and `std::deque` are perfect for the PMergeMe Exercise
+### Why `std::vector` and `std::deque` for the PMergeMe Exercise
 
 In the PMergeMe exercise, we need to sort sequences of integers using a combination of merge sort and insertion sort. Both `std::vector` and `std::deque` are ideal choices for this purpose due to the following reasons:
 
@@ -72,31 +72,31 @@ In the PMergeMe exercise, we need to sort sequences of integers using a combinat
    - `std::deque` allows efficient insertion and deletion at both ends, which can be useful for certain sorting operations.
 
 ## Ford-Johnson Merge-Insert Algorithm (ex02)
+The Ford-Johnson Merge-Insert algorithm is a sorting algorithm that aims to minimize the number of comparisons, which can sometimes make it faster than traditional merge sort, especially for small sequences. However, it is typically more complex and may not always be faster in practice, depending on the implementation and the specific dataset.
 
-The Ford-Johnson merge-insert algorithm is a comparison-based sorting algorithm that combines elements of merge sort and insertion sort. It is designed to minimize the number of comparisons required to sort a sequence of elements.
+### How It Works:
+1. **Divide the Sequence**: The algorithm first divides the input sequence into smaller sub-sequences or pairs of elements.
+2. **Sort Pairs Using Insertion Sort**: Each of these pairs is sorted using insertion sort. Insertion sort is particularly efficient for small sequences or pairs because it has a minimal number of comparisons for a small number of elements.
+3. **Merge the Sorted Pairs**: After sorting the pairs, the algorithm merges them into a single sorted sequence. This is done using a method similar to merge sort but optimized to use fewer comparisons by leveraging the already partially sorted nature of the input.
 
-### Key Steps of the Ford-Johnson Merge-Insert Algorithm:
-1. **Divide and Conquer**: The algorithm divides the sequence into smaller sub-sequences.
-2. **Insertion Sort**: It uses insertion sort to sort each of the smaller sub-sequences.
-3. **Merge Sort**: After sorting the sub-sequences, it merges them together to form the fully sorted sequence.
+### Example with Threshold 3:
+Let’s take a more complex example with a threshold of 3, meaning that any sequence of three or fewer elements will be sorted using insertion sort:
 
-### Example with threshold 2
-
-Let's sort the sequence `[5, 2, 9, 1, 5, 6]` using the Ford-Johnson merge-insert algorithm.
+Given the sequence `[8, 3, 7, 4, 2, 6, 5, 1]`, the algorithm works as follows:
 
 1. **Divide and Conquer**:
-   - Divide the sequence into pairs: `[(5, 2), (9, 1), (5, 6)]`.
-
+   - Divide the sequence into sub-sequences: `[(8, 3, 7), (4, 2, 6), (5, 1)]`.
 2. **Insertion Sort**:
-   - Sort each pair using insertion sort: `[(2, 5), (1, 9), (5, 6)]`.
-
+   - Sort each sub-sequence using insertion sort:
+     - `(8, 3, 7)` -> `[3, 7, 8]`
+     - `(4, 2, 6)` -> `[2, 4, 6]`
+     - `(5, 1)` -> `[1, 5]`
 3. **Merge Sort**:
-   - Merge the sorted pairs into a single sequence: `[2, 5, 1, 9, 5, 6]`.
-   - Use merge sort to combine the sorted pairs:
-     - Merge `[2, 5]` and `[1, 9]` -> `[1, 2, 5, 9]`
-     - Merge `[1, 2, 5, 9]` and `[5, 6]` -> `[1, 2, 5, 5, 6, 9]`
+   - Merge the sorted sub-sequences together:
+     - First, merge `[3, 7, 8]` and `[2, 4, 6]` -> `[2, 3, 4, 6, 7, 8]`
+     - Then, merge `[2, 3, 4, 6, 7, 8]` with `[1, 5]` -> `[1, 2, 3, 4, 5, 6, 7, 8]`
 
-The final sorted sequence is `[1, 2, 5, 5, 6, 9]`.
+The final sorted sequence is `[1, 2, 3, 4, 5, 6, 7, 8]`.
 
 ### Why the Ford-Johnson Merge-Insert Algorithm Sorts Slower with `std::deque` Compared to `std::vector`
 
