@@ -80,7 +80,7 @@ The Ford-Johnson Merge-Insert algorithm is a sorting algorithm that aims to mini
 3. **Merge the Sorted Pairs**: After sorting the pairs, the algorithm merges them into a single sorted sequence. This is done using a method similar to merge sort but optimized to use fewer comparisons by leveraging the already partially sorted nature of the input.
 
 ### Example with Threshold 3:
-Let’s take a more complex example with a threshold of 3, meaning that any sequence of three or fewer elements will be sorted using insertion sort:
+Let’s take a simple example with a threshold of 3, meaning that any sequence of three or fewer elements will be sorted using insertion sort:
 
 Given the sequence `[8, 3, 7, 4, 2, 6, 5, 1]`, the algorithm works as follows:
 
