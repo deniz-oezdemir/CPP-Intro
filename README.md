@@ -1,4 +1,5 @@
 # Intro-OOP-CPP
+An introduction to Object-Oriented Programming in C++.
 
 ## Contents
 Each module covers the following topics.
