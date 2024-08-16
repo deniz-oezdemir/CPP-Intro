@@ -1,4 +1,4 @@
-# Intro-OOP-CPP
+# OOP-with-CPP
 An introduction to Object-Oriented Programming in C++.
 
 ## Contents
